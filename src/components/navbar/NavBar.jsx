@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import SearchIcon from '@material-ui/icons/Search'
 import Badge from '@material-ui/core/Badge/Badge'
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined'
+import { logout } from '../../redux/apisCall'
 
 import {
   SearchContainer,
@@ -33,6 +34,8 @@ const NavBar = () => {
   const [disp, setDisp] = useState(false)
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
 
   const handleRegiste = () => {
     navigate('/register')
@@ -42,8 +45,13 @@ const NavBar = () => {
     navigate('/login')
   }
 
+  
   const handleHome = () => {
     navigate('/')
+  }
+  const handleLogout = () => {
+    setDisp(false)
+   logout(dispatch)
   }
 
   const handleDisp = () => {
@@ -66,6 +74,10 @@ const NavBar = () => {
         {
           user ? (
             <Right>
+              <MenuItem onClick={handleRegiste}>PRODUTOS</MenuItem>
+              <MenuItem onClick={handleRegiste}>CATEGORIAS</MenuItem>
+              <MenuItem onClick={handleRegiste} color='d76903'>PROMOÇŌES</MenuItem>
+              <MenuItem></MenuItem>
               <MenuItem>
                 <Link to='/cart'>
                   <Badge badgeContent={quantity} color="primary">
@@ -79,7 +91,7 @@ const NavBar = () => {
                 height: 55,
                 marginLeft: 20,
               }}>
-                {disp && <MenuLinks />}
+                {disp && <MenuLinks logChange={handleLogout} />}
                 {!user.img ? (
                   <Stack
                     style={{
@@ -120,7 +132,7 @@ const NavBar = () => {
               <div className='avatarUser' style={{
 
               }}>
-                {disp && <MenuLinks />}
+                {disp && <MenuLinks logChange={handleLogin} />}
                 {!user?.img ? (
                   <Stack
                     style={{

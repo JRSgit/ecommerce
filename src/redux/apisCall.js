@@ -14,7 +14,7 @@ export const login = async (dispatch, user) => {
 
   try {
     console.log('chegou aqui')
-    const res = await publicRequest.post('/auth/login', user)
+    const res = await publicRequest.post('/login', user, {method: "POST"})
     dispatch(loginSuccess(res.data))
   } catch (err) {
     dispatch(loginFailure())

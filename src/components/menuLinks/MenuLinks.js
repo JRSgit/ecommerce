@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile, tablet } from '../../responsive'
+//import { mobile, tablet } from '../../responsive'
 
 export const MenuLink = styled.div`
   position: absolute;

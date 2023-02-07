@@ -8,6 +8,8 @@ import Register from "./pages/register/Register.jsx";
 import ProductList from "./pages/productList/ProductList.jsx";
 import Success from './pages/success/Success.jsx';
 import { useSelector } from 'react-redux';
+import Orders from './components/orders/Orders.jsx';
+import { MyDates } from './pages/myDate/MyDates';
 
 
 
@@ -17,7 +19,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' index element={<Home />} />
         <Route path='/login' element={user ? <Home /> : <Login />} />
         <Route path='/register' element={<Register />} />
 
@@ -25,6 +27,8 @@ const App = () => {
         <Route path='/products/:id' element={<Product />} />
         <Route path='/products/categories' element={<ProductList />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/mydate' element={<MyDates />} />
+        <Route path='/orders' element={<Orders />} />
         <Route path='/success' element={<Success />} />
       </Routes>
 

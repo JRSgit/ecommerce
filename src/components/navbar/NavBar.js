@@ -11,7 +11,7 @@ export const Container = styled.div`
   `
 
 export const MenuItem = styled.div`
-font-size: 1.2rem;
+font-size: .8rem;
 display: flex;
 align-items: center;
 cursor: pointer;
@@ -72,7 +72,7 @@ export const Center = styled.div`
 
   `
 export const Right = styled.div`
-  flex: 1;
+  flex: 1.5;
   display: flex;
   align-items: center;
   justify-content: flex-end;

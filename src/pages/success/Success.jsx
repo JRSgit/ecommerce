@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { useParams, useLocation } from 'react-router-dom'
-import { userRequest } from '../../requestMethods'
+import {  useLocation } from 'react-router-dom'
+// import { userRequest } from '../../requestMethods'
 
 const Success = (props) => {
   const location = useLocation()

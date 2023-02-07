@@ -13,8 +13,8 @@ const Products = ({ cat, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          cat ? `http://localhost:3333/products/categories?category=${cat}`
-            : 'http://localhost:3333/products', { method: "GET" })
+          cat ? `http://192.168.1.104:3333/products/categories?category=${cat}`
+            : 'http://192.168.1.104:3333/products', { method: "GET" })
         setProducts(res.data);
       } catch (err) {
         console.log(err.message)

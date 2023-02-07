@@ -4,7 +4,7 @@ import { mobile } from '../../responsive'
 export const Container = styled.div`
   overflow: hidden;
   display: flex;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
 
   ${mobile({ display: 'none' })}
